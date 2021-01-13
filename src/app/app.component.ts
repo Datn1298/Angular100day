@@ -15,8 +15,4 @@ export class AppComponent {
     name: "Datnt",
     age: 22
   };
-
-  handler() {
-    console.log("clicked");
-  }
 }

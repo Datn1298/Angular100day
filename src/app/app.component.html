@@ -1,13 +1,12 @@
-{{name}}
+<hello *ngIf="user.age >= 18; else under18" [name]="user.name"> </hello>
 
-<p> {{user.name}} </p>
-<p> {{user.age}} </p>
+<ng-template #under18>
+	<div>
+		U r too young to see this content
+	</div>
+</ng-template>
 
-<input [type] ="inputType" [value]="user.name" >
-<button type = "button" (click)="handler()">Click me</button>
-<br> <br>
-<input type = "text" [(ngModel)] = "name" />
 
-<br>
-
-// [(ngModel)] = "name" tương đương (ngModel) = "name", (ngModelChange) = "name = $event"
+<button (click)="user.age= user.age-1"> - </button>
+Age: {{user.age}}
+<button (click)="user.age= user.age+1"> + </button>
