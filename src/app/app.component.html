@@ -1,0 +1,13 @@
+{{name}}
+
+<p> {{user.name}} </p>
+<p> {{user.age}} </p>
+
+<input [type] ="inputType" [value]="user.name" >
+<button type = "button" (click)="handler()">Click me</button>
+<br> <br>
+<input type = "text" [(ngModel)] = "name" />
+
+<br>
+
+// [(ngModel)] = "name" tương đương (ngModel) = "name", (ngModelChange) = "name = $event"
