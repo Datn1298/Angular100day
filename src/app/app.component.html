@@ -1,35 +1,4 @@
 <hello name="{{name}}"> </hello>
 
-<p>
-	Start
-</p>
-
-<button (click)="isDanger = !isDanger"> Toggle Danger </button>
-<br>
-<button (click)="isWarning = !isWarning"> Toggle Warning </button>
-<!-- 
-   - [class.ten-class]
-   <div class="box" [class]="{'red-border': "isDanger", 'yellow-background':isWarning></div>
-  
-   - [class] = "array"
-   - [class] = "object" {[ten-class: string]: boolean}
-   - [class] = "variable"
-  -->
-
-<div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning"></div>
-
-<!-- 
-  - [style.tenStyle]
-  - [style.ten-style]
-
-  - [style] = "object "
-  <p [style]={color: 'red', background-color: 'yellow'}>
-
- -->
-
-<br>
-
-<p [style.--text-color]="isDanger ? 'red' : 'blue'"
-	[style]="{color: 'var(--text-color)', backgroundColor: 'yellow', fontSize: '2rem'}">
-	Start
-</p>
+<button (click)="currentProgress = currentProgress+1"> Increase Progress</button>
+<progress-bar [progress]="currentProgress" [progressColor]="'dodgerblue'"></progress-bar>
