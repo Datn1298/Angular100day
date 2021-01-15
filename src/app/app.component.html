@@ -4,24 +4,32 @@
 	Start
 </p>
 
-<ul>
-	<li
-		*ngFor="let u of users; index as idx; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
-		<span> {{u.name}} - {{u.id}} - {{u.phone}}</span>
-		<br>
-		<span> at index {{idx}} out of {{total}} </span>
-		<br>
-		<span *ngIf = "isEven"> I am even number</span>
-		<br>
-		<span *ngIf = "isOdd"> I am odd number</span>
-		<br>
-		<span *ngIf = "isFirst"> I am first</span>
-		<br>
-		<span *ngIf = "isLast"> I am last</span>
-		<br>
-  </li>
-</ul>
+<button (click)="isDanger = !isDanger"> Toggle Danger </button>
+<br>
+<button (click)="isWarning = !isWarning"> Toggle Warning </button>
+<!-- 
+   - [class.ten-class]
+   <div class="box" [class]="{'red-border': "isDanger", 'yellow-background':isWarning></div>
+  
+   - [class] = "array"
+   - [class] = "object" {[ten-class: string]: boolean}
+   - [class] = "variable"
+  -->
 
-<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">
-  {{tag}}
-</button>
+<div class="box" [class.red-border]="isDanger" [class.yellow-background]="isWarning"></div>
+
+<!-- 
+  - [style.tenStyle]
+  - [style.ten-style]
+
+  - [style] = "object "
+  <p [style]={color: 'red', background-color: 'yellow'}>
+
+ -->
+
+<br>
+
+<p [style.--text-color]="isDanger ? 'red' : 'blue'"
+	[style]="{color: 'var(--text-color)', backgroundColor: 'yellow', fontSize: '2rem'}">
+	Start
+</p>
