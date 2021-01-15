@@ -1,12 +1,27 @@
-<hello *ngIf="user.age >= 18; else under18" [name]="user.name"> </hello>
+<hello name="{{name}}"> </hello>
 
-<ng-template #under18>
-	<div>
-		U r too young to see this content
-	</div>
-</ng-template>
+<p>
+	Start
+</p>
 
+<ul>
+	<li
+		*ngFor="let u of users; index as idx; count as total; first as isFirst; last as isLast; even as isEven; odd as isOdd">
+		<span> {{u.name}} - {{u.id}} - {{u.phone}}</span>
+		<br>
+		<span> at index {{idx}} out of {{total}} </span>
+		<br>
+		<span *ngIf = "isEven"> I am even number</span>
+		<br>
+		<span *ngIf = "isOdd"> I am odd number</span>
+		<br>
+		<span *ngIf = "isFirst"> I am first</span>
+		<br>
+		<span *ngIf = "isLast"> I am last</span>
+		<br>
+  </li>
+</ul>
 
-<button (click)="user.age= user.age-1"> - </button>
-Age: {{user.age}}
-<button (click)="user.age= user.age+1"> + </button>
+<button *ngFor="let tag of tags; last as isLast" [class.right-margin]="!isLast">
+  {{tag}}
+</button>
