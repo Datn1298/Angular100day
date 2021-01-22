@@ -4,11 +4,19 @@ import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
-import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
+import { AuthorListComponent } from "./authors/author-list.component";
+import { AuthorDetailComponent } from "./authors/author-details.component";
+import { authors } from "./authors";
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, HelloComponent, ProgressBarComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    AuthorListComponent,
+    AuthorDetailComponent,
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
