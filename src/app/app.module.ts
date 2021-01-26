@@ -3,20 +3,11 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-import { HelloComponent } from "./hello.component";
-import { AuthorListComponent } from "./authors/author-list.component";
-import { AuthorDetailComponent } from "./authors/author-details.component";
-import { authors } from "./authors";
+import { ToggleComponent } from "./toggle/toggle.component";
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [
-    AppComponent,
-    HelloComponent,
-    AuthorListComponent,
-    AuthorDetailComponent,
-  
-  ],
+  declarations: [AppComponent, ToggleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
